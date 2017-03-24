@@ -136,6 +136,10 @@ RUN set -x \
 	&& mv /tmp/aos/_vti_bin.war tomcat/webapps \
 	&& rm -rf /tmp/aos $AOS_ZIP
 
+# Install bcircle addons
+COPY assets/amps-bcircle/Share	$ALF_HOME/amps_share
+COPY assets/amps-bcircle/Repository	$ALF_HOME/amps
+
 # Install addons 
 COPY assets/amps $ALF_HOME/amps
 COPY assets/amps_share $ALF_HOME/amps_share
