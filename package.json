@@ -1,0 +1,7 @@
+{
+    "name": "alfresco-docker",
+    "scripts": {
+        "stop": "docker stop $(docker ps -a -q)",
+        "remove": "docker rm $(docker ps -a -q)"
+    }
+}

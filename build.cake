@@ -10,10 +10,11 @@ Task("Compose-Up").Does(() => {
 });
 
 Task("Remove-All").Does(() => {
-    //docker stop $(docker ps -a -q)
-    //docker rm $(docker ps -a -q)
-    process("docker", "stop $(docker ps -a -q)");
-    process("docker", "rm $(docker ps -a -q)");
+    process("npm", "run remove");
+});
+
+Task("Download-Modules").Does(() => {
+    process("mmt", "download");
 });
 
 var target = Argument("target", "default");
